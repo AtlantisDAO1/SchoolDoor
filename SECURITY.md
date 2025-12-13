@@ -17,7 +17,7 @@ We take the security of SchoolDoor seriously. If you have found a vulnerability,
 
 Please **DO NOT** report security vulnerabilities through public GitHub issues.
 
-Instead, please send an email to **[security@schooldoor.in](mailto:admin@schooldoor.in)**.
+Instead, please send an email to **[support@dropchain.in](mailto:support@dropchain.in)**.
 
 Please include:
 *   A description of the vulnerability.
