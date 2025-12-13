@@ -88,6 +88,8 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 For security concerns, please email us at [security@schooldoor.in](mailto:admin@schooldoor.in).
 
+See our [Security Policy](SECURITY.md) for more details.
+
 ## License
 
-This project is licensed under the terms of the MIT License.
+This project is licensed under the terms of the [MIT License](LICENSE).
