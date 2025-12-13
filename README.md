@@ -19,7 +19,7 @@ This project is a monorepo containing both the backend and frontend services.
     -   RESTful API for Schools, Reviews, and Users
     -   Role-based Access Control (Admin vs Member)
     -   Web Scraping Service for school data aggregation
-    -   [Detailed UML Diagram](docs/backend_diagram.puml)
+    -   [Detailed UML Diagram](SchoolDoor-Backend/docs/backend_diagram.puml)
 
 ### Frontend (`/SchoolDoor-Frontend`)
 -   **Framework**: Next.js 15 (App Router)

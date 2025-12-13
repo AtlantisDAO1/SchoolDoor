@@ -64,8 +64,8 @@ The Admin portal provides powerful tools for platform management.
 ### Quick Install
 1.  **Clone the repo:**
     ```bash
-    git clone https://github.com/yourusername/schooldoor-frontend.git
-    cd schooldoor-frontend
+    git clone https://github.com/AtlantisDAO1/SchoolDoor.git
+    cd SchoolDoor/SchoolDoor-Frontend
     ```
 2.  **Install dependencies:**
     ```bash
@@ -111,11 +111,11 @@ This document outlines the high-level roadmap for SchoolDoor.
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to get started, our development workflow, and coding standards.
+We welcome contributions! Please see our [Contributing Guidelines](../CONTRIBUTING.md) for details on how to get started, our development workflow, and coding standards.
 
 ## Code of Conduct
 
-Please review our [Code of Conduct](CONTRIBUTING.md#code-of-conduct) before participating.
+Please review our [Code of Conduct](../CONTRIBUTING.md#code-of-conduct) before participating.
 
 ## Security Policy
 
@@ -123,5 +123,5 @@ For security concerns, please email us at [security@schooldoor.in](mailto:admin@
 
 ## License
 
-This project is licensed under the terms of the [MIT License](LICENSE).
+This project is licensed under the terms of the [MIT License](../LICENSE).
 
