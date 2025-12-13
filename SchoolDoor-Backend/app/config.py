@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     """
     Global application settings.
     """
-    # Database Configuration
-    database_url: str = "postgresql://localhost/schooldoor"
+    # Database Configuration (set via DATABASE_URL env var)
+    database_url: str = "postgresql://localhost/schooldoor"  # Override in .env
     
     # AI API Configuration
     perplexity_api_key: Optional[str] = None
