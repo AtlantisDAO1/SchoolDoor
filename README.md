@@ -82,7 +82,7 @@ npm run dev
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](SchoolDoor-Frontend/CONTRIBUTING.md) for details on how to get started.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to get started.
 
 ## Security
 
