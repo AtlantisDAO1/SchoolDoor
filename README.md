@@ -86,7 +86,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 ## Security
 
-For security concerns, please email us at [security@schooldoor.in](mailto:admin@schooldoor.in).
+For security concerns, please email us at [support@dropchain.in](mailto:support@dropchain.in).
 
 See our [Security Policy](SECURITY.md) for more details.
 
