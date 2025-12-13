@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: schooldoor-frontend-dev
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm ci --no-audit --no-fund && npm run dev"
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://host.docker.internal:6001
+      - BACKEND_API_URL=http://host.docker.internal:6001/api/v1
+      # Alfred chatbot configuration
+      - ALFRED_CHAT_API_URL=${ALFRED_CHAT_API_URL:-https://api.dropchain.ai/gemini/chat}
+      - ***REMOVED***
+    volumes:
+      - .:/app
+      - /app/node_modules
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

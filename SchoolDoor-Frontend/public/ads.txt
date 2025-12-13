@@ -1,0 +1,5 @@
+# For more information on ads.txt, visit https://iabtechlab.com/ads-txt/
+# Replace placeholder entries below with the network(s) you authorize.
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+

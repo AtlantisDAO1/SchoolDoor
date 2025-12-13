@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --sd-navy: #0f9790;
+  --sd-salmon: #fc8a7b;
+  --sd-yellow: #ffcb05;
+  --sd-charcoal: #1a1a1a;
+  --sd-ink: #0d4646;
+  --sd-cream: #fff7f1;
+  --sd-soft-blue: #dcf6f4;
+  --sd-soft-pink: #ffe4dc;
+  --sd-soft-green: #e4f6ef;
+  --sd-muted: #4b6665;
+  --sd-card: #ffffff;
+}
+
+/* Removed @theme inline as it was causing errors */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: white;
+  color: var(--sd-ink);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), "Playfair Display", "Times New Roman",
+    serif;
+  font-weight: 500;
+}
+
+::selection {
+  background-color: rgba(252, 138, 123, 0.3);
+  color: var(--sd-charcoal);
+}
+
+/* Custom Times font class */
+.font-times {
+  font-family: var(--font-times) !important;
+}
+
+/* Force font-weight 400 for specific elements */
+.font-normal {
+  font-weight: 400 !important;
+}

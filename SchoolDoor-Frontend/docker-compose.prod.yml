@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: schooldoor-frontend-prod
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.prod
+    environment:
+      - NODE_ENV=production
+      # Point this to your backend API reachable from the container
+      - NEXT_PUBLIC_API_BASE_URL=http://host.docker.internal:6001
+      - BACKEND_API_URL=http://host.docker.internal:6001/api/v1
+      # Alfred chatbot configuration - REQUIRED for chatbot to work
+      - ALFRED_CHAT_API_URL=${ALFRED_CHAT_API_URL:-https://api.dropchain.ai/gemini/chat}
+      - ALFRED_CHAT_API_KEY=${ALFRED_CHAT_API_KEY}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

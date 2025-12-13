@@ -1,0 +1,7 @@
+Contact: mailto:admin@schooldoor.in
+Encryption: https://www.schooldoor.in/.well-known/pgp.txt
+Acknowledgments: https://www.schooldoor.in/security#acknowledgments
+Policy: https://www.schooldoor.in/security
+Preferred-Languages: en
+Expires: 2026-12-31T23:59:59.000Z
+

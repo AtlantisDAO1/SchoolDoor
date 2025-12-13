@@ -1,0 +1,9 @@
+/* TEAM */
+Team: SchoolDoor Engineering
+Contact: admin@schooldoor.in
+Site: https://www.schooldoor.in
+
+/* THANKS */
+Powered-by: SchoolDoor Community
+Standards: HTML5, CSS3, TypeScript, Next.js
+

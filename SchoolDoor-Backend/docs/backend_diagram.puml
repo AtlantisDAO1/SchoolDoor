@@ -1,0 +1,132 @@
+@startuml
+!theme plain
+hide empty members
+
+' Data Models
+package "Models" {
+    class School {
+        +Integer id
+        +String name
+        +String city
+        +String state
+        +String school_type
+        +String board
+        +JSON board_exam_results
+        +JSON facilities
+        +Float student_teacher_ratio
+        +Boolean is_active
+    }
+
+    class MemberUser {
+        +Integer id
+        +String email
+        +String full_name
+        +String bio
+        +String location
+    }
+
+    class AdminUser {
+        +Integer id
+        +String username
+        +String email
+        +Boolean is_superuser
+    }
+
+    class Review {
+        +Integer id
+        +Integer school_id
+        +Integer member_id
+        +Float overall_rating
+        +String content
+        +String status
+        +Boolean is_verified
+    }
+
+    class Rating {
+        +Integer id
+        +Integer school_id
+        +Integer category_id
+        +Float rating_value
+    }
+
+    class RatingCategory {
+        +Integer id
+        +String name
+        +Float weight
+    }
+
+    class SchoolRequest {
+        +Integer id
+        +String name
+        +String city
+        +String status
+        +Integer member_id
+        +Integer reviewed_by
+    }
+
+    class APIKey {
+        +Integer id
+        +String name
+        +String key_hash
+        +Integer usage_count
+    }
+
+    class ScrapingJob {
+        +Integer id
+        +String region
+        +String status
+        +Integer schools_found
+    }
+
+    School "1" -- "0..*" Review : receives
+    School "1" -- "0..*" Rating : receives
+    MemberUser "1" -- "0..*" Review : writes
+    MemberUser "1" -- "0..*" SchoolRequest : submits
+    AdminUser "1" -- "0..*" SchoolRequest : reviews
+    RatingCategory "1" -- "0..*" Rating : categorizes
+}
+
+' API Controllers
+package "API" {
+    class SchoolsRouter {
+        +get_schools()
+        +get_school()
+        +update_school()
+    }
+    class MembersRouter {
+        +member_signup()
+        +member_login()
+        +create_review()
+    }
+    class ReviewsRouter {
+        +create_review()
+        +update_review()
+    }
+    class AdminRouter {
+        +admin_login()
+        +get_stats()
+    }
+}
+
+' Services
+package "Services" {
+    class MemberAuthService
+    class RatingService
+    class AdminAuthService
+    class AdminDashboardService
+    class ScrapingService
+}
+
+' Relationships
+SchoolsRouter --> RatingService
+SchoolsRouter --> School
+MembersRouter --> MemberAuthService
+MembersRouter --> RatingService
+ReviewsRouter --> RatingService
+ReviewsRouter --> Review
+
+RatingService --> Review
+RatingService --> School
+RatingService --> Rating
+
+@enduml
