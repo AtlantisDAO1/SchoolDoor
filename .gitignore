@@ -61,4 +61,7 @@ yarn-error.log*
 
 # SSH Keys
 ssh_keys/
+# Private Deployment Files
+private/
+
 
