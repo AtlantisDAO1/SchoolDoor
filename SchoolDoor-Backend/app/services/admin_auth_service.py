@@ -8,7 +8,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from app.config import settings
 from app.database import get_db
 from app.models_admin import AdminUser, AdminActivityLog
-from app.schemas import AdminCreate, Token
+from app.schemas_admin import AdminTokenData
 import logging
 
 """

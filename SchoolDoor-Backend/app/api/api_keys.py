@@ -9,43 +9,17 @@ from app.models_api_key import APIKey
 from app.services.api_key_service import APIKeyService
 from app.services.admin_auth_service import get_current_admin
 from app.models_admin import AdminUser
-from pydantic import BaseModel
+from app.models_admin import AdminUser
 from datetime import datetime
+from app.schemas import (
+    APIKeyCreate, 
+    APIKeyResponse, 
+    APIKeyGenerateResponse, 
+    APIKeyStatsResponse
+)
 
 router = APIRouter(prefix="/api-keys", tags=["api-keys"])
 
-# Pydantic schemas
-class APIKeyCreate(BaseModel):
-    name: str
-    description: Optional[str] = None
-    expires_days: Optional[int] = None
-
-class APIKeyResponse(BaseModel):
-    id: int
-    name: str
-    description: Optional[str]
-    is_active: bool
-    created_at: datetime
-    expires_at: Optional[datetime]
-    last_used_at: Optional[datetime]
-    usage_count: int
-    created_by_admin_id: Optional[int]
-
-class APIKeyGenerateResponse(BaseModel):
-    api_key: str
-    name: str
-    description: Optional[str]
-    expires_days: Optional[int]
-    message: str
-
-class APIKeyStatsResponse(BaseModel):
-    total_requests: int
-    successful_requests: int
-    failed_requests: int
-    unique_endpoints: int
-    last_used: Optional[str] = None
-    usage_by_endpoint: List[dict]
-    usage_by_day: List[dict]
 
 # API Key Management (Admin only)
 @router.post("/generate", response_model=APIKeyGenerateResponse)

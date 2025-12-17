@@ -8,7 +8,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from app.config import settings
 from app.database import get_db
 from app.models_member import MemberUser
-from app.schemas import MemberCreate, Token
+from app.schemas_member import MemberTokenData
 import logging
 
 """

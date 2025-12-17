@@ -280,3 +280,40 @@ class AdvancedSearch(BaseModel):
     sort_order: Optional[str] = "desc"  # asc, desc
     limit: int = 20
     offset: int = 0
+
+
+# API Key Schemas
+class APIKeyCreate(BaseModel):
+    name: str
+    description: Optional[str] = None
+    expires_days: Optional[int] = None
+
+
+class APIKeyResponse(BaseModel):
+    id: int
+    name: str
+    description: Optional[str]
+    is_active: bool
+    created_at: datetime
+    expires_at: Optional[datetime]
+    last_used_at: Optional[datetime]
+    usage_count: int
+    created_by_admin_id: Optional[int]
+
+
+class APIKeyGenerateResponse(BaseModel):
+    api_key: str
+    name: str
+    description: Optional[str]
+    expires_days: Optional[int]
+    message: str
+
+
+class APIKeyStatsResponse(BaseModel):
+    total_requests: int
+    successful_requests: int
+    failed_requests: int
+    unique_endpoints: int
+    last_used: Optional[str] = None
+    usage_by_endpoint: List[Dict[str, Any]]
+    usage_by_day: List[Dict[str, Any]]
