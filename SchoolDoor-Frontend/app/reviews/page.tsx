@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ReviewsApp } from "@/components/ReviewsApp";
-import { fetchSchools } from "@/lib/schooldoor-api";
-import type { School } from "@/lib/schooldoor-api";
+import ReviewsListContainer from "./ReviewsListContainer";
+import { ReviewsSkeleton } from "@/components/skeletons/ReviewsSkeleton";
 
 export const metadata: Metadata = {
   title: "School Reviews | SchoolDoor",
@@ -10,18 +9,7 @@ export const metadata: Metadata = {
     "Read and share verified parent reviews for schools near you. Search by name, city, or board.",
 };
 
-export default async function ReviewsPage() {
-  let schools: School[] = [];
-  let loadError: string | null = null;
-
-  try {
-    schools = await fetchSchools(200);
-  } catch (error) {
-    console.error("Failed to load schools for review page", error);
-    loadError =
-      "We couldn’t load the school list right now. Please try again in a bit.";
-  }
-
+export default function ReviewsPage() {
   return (
     <main className="mx-auto w-full max-w-content px-5 pt-0 md:py-16 sm:px-6 md:px-16">
       <div className="rounded-4xl bg-white/85 py-10 shadow-surface-md backdrop-blur">
@@ -39,15 +27,9 @@ export default async function ReviewsPage() {
           </p>
         </header>
 
-        {loadError ? (
-          <p className="mt-12 rounded-3xl border border-sd-soft-pink/60 bg-sd-soft-pink/40 p-6 text-center text-sm text-sd-salmon">
-            {loadError}
-          </p>
-        ) : (
-          <Suspense fallback={<div className="mt-12 text-center">Loading…</div>}>
-            <ReviewsApp initialSchools={schools} />
-          </Suspense>
-        )}
+        <Suspense fallback={<ReviewsSkeleton />}>
+          <ReviewsListContainer />
+        </Suspense>
       </div>
     </main>
   );
